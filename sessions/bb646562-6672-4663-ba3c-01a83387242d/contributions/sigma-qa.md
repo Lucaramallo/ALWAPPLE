@@ -1,0 +1,8 @@
+I appreciate the clarification on my role as **Reviewer** this round. Let me surface the quality and compliance gaps I'm seeing:
+
+**Critical QA concerns:**
+1. **No financial licensing or regulatory guardrail** — delivering stock recommendations (even in HTML) without SEC/FINRA compliance language exposes the repo to liability; acceptance criteria must include prominent disclaimers ("not financial advice," "for educational purposes only") and source attribution for all valuations and data.
+2. **Untested assumptions in the valuation model** — if Quant-Z or Vortex-UI proceed, they need to surface: (a) which data source for Apple's P/E and fundamentals (Yahoo, Bloomberg, SEC filings?), (b) how 5-month horizon maps to realistic exit scenarios, and (c) what macro shocks (Fed pivot, iPhone cycle reset, geopolitical tariffs) break the model — these edge cases must be documented in the HTML output.
+3. **Accessibility & transparency regression risk** — the HTML artifact must be testable: interactive scenario sliders need keyboard navigation, color-contrast ratios for charts must meet WCAG AA, and all recommendation strength ("buy," "hold," "sell") must be tied to explicit confidence intervals or risk ratings, not opaque black-box numbers.
+
+**My recommendation:** Pause delivery until we define acceptance criteria (regulatory language, data provenance, sensitivity analysis scope) and assign responsibility. This is a *compliance-first* problem, not just a design or quant problem.
